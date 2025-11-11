@@ -1,0 +1,136 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+
+\title{Documentación del módulo Hola Mundo en Odoo}
+\author{Santi Martínez}
+\date{\today}
+
+\begin{document}
+    \maketitle
+
+    \newpage
+    \renewcommand{\contentsname}{ÍNDICE}
+    \tableofcontents
+
+    \newpage
+    \section{Introducción}
+
+    \newpage
+    \section{Preparación del entorno}
+
+    \newpage
+    \section{Activación del modo desarrollador en Odoo 17}
+        Antes de proceder a su activación, cabe saber que el modo desarrollador permite ver y modificar la estructura interna de Odoo; permisos indispensables para crear o depurar módulos.\\\\
+        El modo desarrollador en Odoo se puede activar de tres maneras diferentes:
+        \begin{enumerate}
+            \item Desde la interfaz propia de Odoo.
+            \begin{itemize}
+                \item Entrar en Odoo con el usuario administrador.
+                \item \textbf{Ajustes} $\rightarrow$ \textbf{Activar modo desarrollador} (El cual solo será visible si hay al menos un módulo instalado)
+            \end{itemize}
+
+            \item Desde la URL:
+            \begin{itemize}
+                \item Añadir al final de la URL: \texttt{?debug=1}\\
+                Por ejemplo: \texttt{http://localhost:8069/web?debug=1}
+            \end{itemize}
+
+            \item Con una extensión en el navegador:
+            \begin{itemize}
+                \item Firefox: \url{https://addons.mozilla.org/es/firefox/addon/odoo-debug/}
+                \item Chrome \url{https://chrome.google.com/webstore/detail/odoo-
+debug/hmdmhilocobgohohpdpolmibjklfgkbi?hl=es_PR}
+            \end{itemize}
+        \end{enumerate}
+
+        En esta documentación se tratará la opción propia de la interfaz de Odoo.
+
+
+        \subsection*{Entrar en Odoo con el usuario administrador}
+            \begin{figure}[!htb]
+                \centering
+                \includegraphics[width=0.5\textwidth]{images/administrador.png}
+                \caption{Odoo con usuario administrador}
+            \end{figure}
+
+        \subsection*{Activar modo desarrollador}
+            \begin{figure}[!htb]
+                \centering
+                \includegraphics[width=0.3\textwidth]{images/ajustes.png}
+                \caption{Ajustes}
+            \end{figure}
+
+            \begin{figure}[!htb]
+                \centering
+                \includegraphics[width=0.7\textwidth]{images/modo-desarrollador.png}
+                \caption{Activar modo desarrollador}
+            \end{figure}
+
+
+    \newpage
+    \section{Primer módulo: "Hola mundo"}
+        El objetivo de este primer módulo es el comprobar que Odoo detacta correctamente los módulos que se crean de forma manual.
+        \\\\ La ubicación de los módulos personalizados se guarda dentro del directorio configurado para módulos, en este caso dentro de /módulos:\\
+        \begin{figure}[!htb]
+            \centering
+            \includegraphics[width=0.6\textwidth]{images/hola_mundo.png}
+            \caption{Ubicación del módulo holamundo}
+        \end{figure}
+
+        En el interior de esta carpeta, se crean dos ficheros:
+        \begin{itemize}
+            \item \textbf{\_init\_.py}. El cual estará vacío
+            \item \textbf{\_manifest\_.py}. Contiene el siguiente código:
+                \begin{figure}[!htb]
+                    \centering
+                    \includegraphics[width=0.7\textwidth]{images/code_manifest.png}
+                \end{figure}
+        \end{itemize}
+
+        El directorio \textbf{/módulos} queda así:
+        \begin{figure}[!htb]
+            \centering
+            \includegraphics[width=0.7\textwidth]{images/init_manifest copy.png}
+            \caption{ficheros}
+        \end{figure}
+        
+        
+        Una vez creada la estructura, con el "Modo desarrollador" activado, se actualizará la liasta de aplicaciones.
+        \begin{enumerate}
+            \item Entrar en el menú de Odoo dentro de Aplicaciones:
+                \begin{figure}[!htb]
+                    \centering
+                    \includegraphics[width=0.3\textwidth]{images/entrar-aplicaciones copy.png}
+                \end{figure}
+                
+            \item Ir a Actualizar lista de aplicaciones:
+                \begin{figure}[!htb]
+                    \centering
+                    \includegraphics[width=0.7\textwidth]{images/actualizar-lista.png}
+                \end{figure}
+
+            \item Confirmar que sí se quiere actualizar:
+                \begin{figure}[!htb]
+                    \centering
+                    \includegraphics[width=0.6\textwidth]{images/confirmar-actualizar.png}
+                \end{figure}
+        \end{enumerate}
+
+    \newpage
+    \section{Creación de módulos en Odoo}
+
+    \newpage
+    \section{Módulo funcional: "Lista de tareas"}
+
+    \newpage
+    \section{Modificación del módulo "Lista de tareas"}
+
+    \newpage
+    \section{Conclusiones}
+
+
+
+
+\end{document}
