@@ -4,6 +4,6 @@
 \contentsline {section}{\numberline {4}Primer módulo: "Hola mundo"}{6}{section.4}%
 \contentsline {section}{\numberline {5}Creación de módulos en Odoo}{8}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Creación de módulos con Odoo Scaffold}{9}{subsection.5.1}%
-\contentsline {section}{\numberline {6}Módulo funcional: "Lista de tareas"}{10}{section.6}%
-\contentsline {section}{\numberline {7}Modificación del módulo "Lista de tareas"}{11}{section.7}%
-\contentsline {section}{\numberline {8}Conclusiones}{12}{section.8}%
+\contentsline {section}{\numberline {6}Módulo funcional: "Lista de tareas"}{12}{section.6}%
+\contentsline {section}{\numberline {7}Modificación del módulo "Lista de tareas"}{13}{section.7}%
+\contentsline {section}{\numberline {8}Conclusiones}{14}{section.8}%

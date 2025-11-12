@@ -131,31 +131,62 @@ debug/hmdmhilocobgohohpdpolmibjklfgkbi?hl=es_PR}
 
         Desarrollar cada módulo como una aplicación dentro de otra aplicación, asegurando autonomía y flexibilidad en su diseño. Utilizar esta organización modular para ampliar Odoo de manera escalable y personalizada, ajustando las funciones a las necesidades particulares de cada entorno sin alterar la base del sistema. Mantener la integración fluida entre módulos para que cada uno actúe como una pieza esencial dentro de un conjunto perfectamente engranado, reforzando así la adaptabilidad y el rendimiento global de la plataforma.
         \subsection{Creación de módulos con Odoo Scaffold}
-            Utilizar el comando odoo scaffold para generar la estructura base de un nuevo módulo dentro del entorno de desarrollo de Odoo. Este comando permite crear automáticamente todos los archivos y carpetas necesarias para iniciar un módulo funcional, siguiendo la arquitectura estándar de Odoo.
-            \\\\Para ello, introducir el comando: odoo scaffold "nombre del modulo" "ruta"
-            \\\\ Antes de ese paso, hay que instalar odoo-16 por terminal, en este caso con el comando: 
-            \[\textbf{sudo apt install odoo-16}\]
-                \begin{figure}[!htb]
-                    \centering
-                    \includegraphics[width=1\textwidth]{images/instalacion_odoo-16.png}
-                \end{figure}
-            \\En este caso se crearán 5 módulos nuevos, los cuales serán orientados a la educación, en concreto a módulos enfocados en la organización personal del profesorado: 
-                \begin{itemize}
-                    \item agenda\_profesor
-                    \item clases
-                    \item asistencia\_alumnos
-                    \item calendario
-                    \item registro\_notas
-                \end{itemize}
 
-            \underline{Para ello se utilizan los siguientes comandos:}
-                \begin{itemize}
-                    \item \textbf{odoo scaffold agenda\_profesor ./custom-addons}
-                    \item \textbf{odoo scaffold clases ./custom-addons}
-                    \item \textbf{odoo scaffold asistencia\_alumnos ./custom-addons}
-                    \item \textbf{odoo scaffold calendario ./custom-addons}
-                    \item \textbf{odoo scaffold registro\_notas ./custom-addons}
-                \end{itemize}
+        Utilizar el comando \texttt{odoo scaffold} para generar la estructura base de un nuevo módulo dentro del entorno de desarrollo de Odoo. Este comando permite crear automáticamente todos los archivos y carpetas necesarias para iniciar un módulo funcional, siguiendo la arquitectura estándar de Odoo.
+
+        Para ello, introducir el comando: \texttt{odoo scaffold "nombre del modulo" "ruta"}.
+
+        Antes de ese paso, hay que instalar Odoo 16 por terminal, en este caso con el comando:
+        \[\textbf{sudo apt install odoo-16}\]
+
+        \begin{figure}[!htb]
+            \centering
+            \includegraphics[width=\textwidth]{images/instalacion_odoo-16.png}
+            \caption{Instalación de Odoo 16}
+        \end{figure}
+
+        En este caso se crearán 5 módulos nuevos, orientados a la educación, en concreto a módulos enfocados en la organización personal del profesorado:
+
+        \begin{itemize}
+            \item agenda\_profesor
+            \item clases
+            \item asistencia\_alumnos
+            \item calendario
+            \item registro\_notas
+        \end{itemize}
+
+        \newpage
+        \underline{Para ello se utilizan los siguientes comandos:}
+        
+        \begin{figure}[!htb]
+            \centering
+            \includegraphics[width=1\textwidth]{images/crear-modulos.png}
+            \caption{código de creación de módulos con scaffold}
+        \end{figure}
+        \begin{figure}[!htb]
+            \centering
+            \includegraphics[width=1\textwidth]{images/instalaciones-modulos.png}
+            \caption{Contenido de cada módulo}
+        \end{figure}
+
+
+        \newpage
+        \begin{figure}[!htb]
+            \centering
+            \includegraphics[width=0.9\textwidth]{images/agenda_profesor.png}
+            \caption{Contenido de cada módulo}
+        \end{figure}
+        Breve explicación de cada fichero generado en el interior de cada uno de los módulos:
+        \begin{itemize}
+            \item \textbf{models/models.py}: define un ejemplo del modelo de datos y sus campos.
+            \item \textbf{views/views.xml}: describe las vistas de nuestro módulo (formulario, árbol, menús, etc.).
+            \item \textbf{demo/demo.xml}: incluye datos ``demo'' para el ejemplo propuesto de modelo.
+            \item \textbf{controllers/controllers.py}: contiene un ejemplo de controlador de rutas, implementando algunas rutas.
+            \item \textbf{views/templates.xml}: contiene dos ejemplos de vistas ``qweb'' usado por el controlador de rutas.
+            \item \textbf{\_\_manifest\_\_.py}: es el manifiesto del módulo. Incluye información como el título, descripción, así como ficheros a cargar. En el ejemplo se debe descomentar la línea que contiene la lista de control de acceso en el fichero \textbf{security/ir.model.access.csv}.
+        \end{itemize}
+
+
 
 
     \newpage
