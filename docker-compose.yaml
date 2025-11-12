@@ -24,7 +24,7 @@ services:
       - .env
     volumes:
       - ./custom-addons:/mnt/extra-addons
-      - ./odoo.conf:/etc/odoo/odoo.conf
+      - ./config/odoo.conf:/etc/odoo/odoo.conf
     command: ["odoo", "-c", "/etc/odoo/odoo.conf"]
     restart: always
 

@@ -116,10 +116,47 @@ debug/hmdmhilocobgohohpdpolmibjklfgkbi?hl=es_PR}
                     \centering
                     \includegraphics[width=0.6\textwidth]{images/confirmar-actualizar.png}
                 \end{figure}
+
+            \item Muestra el módulo "Hola mundo:
+                \begin{figure}[!htb]
+                    \centering
+                    \includegraphics[width=1\textwidth]{images/modulo-ejemplo.png}
+                \end{figure}
+                
         \end{enumerate}
 
     \newpage
     \section{Creación de módulos en Odoo}
+        Crear un módulo en Odoo y establecer una aplicación propia integrada dentro de un ecosistema más amplio. Considerar cada módulo como una mini aplicación que forma parte de una aplicación madre mayor: Odoo. Diseñar el módulo de manera que funcione con independencia del resto, definiendo su propia lógica, modelos de datos, vistas, controladores y funcionalidades específicas. Aprovechar la estructura modular de Odoo para garantizar que cada componente opere de forma autónoma, manteniendo la coherencia del sistema general.
+
+        Desarrollar cada módulo como una aplicación dentro de otra aplicación, asegurando autonomía y flexibilidad en su diseño. Utilizar esta organización modular para ampliar Odoo de manera escalable y personalizada, ajustando las funciones a las necesidades particulares de cada entorno sin alterar la base del sistema. Mantener la integración fluida entre módulos para que cada uno actúe como una pieza esencial dentro de un conjunto perfectamente engranado, reforzando así la adaptabilidad y el rendimiento global de la plataforma.
+        \subsection{Creación de módulos con Odoo Scaffold}
+            Utilizar el comando odoo scaffold para generar la estructura base de un nuevo módulo dentro del entorno de desarrollo de Odoo. Este comando permite crear automáticamente todos los archivos y carpetas necesarias para iniciar un módulo funcional, siguiendo la arquitectura estándar de Odoo.
+            \\\\Para ello, introducir el comando: odoo scaffold "nombre del modulo" "ruta"
+            \\\\ Antes de ese paso, hay que instalar odoo-16 por terminal, en este caso con el comando: 
+            \[\textbf{sudo apt install odoo-16}\]
+                \begin{figure}[!htb]
+                    \centering
+                    \includegraphics[width=1\textwidth]{images/instalacion_odoo-16.png}
+                \end{figure}
+            \\En este caso se crearán 5 módulos nuevos, los cuales serán orientados a la educación, en concreto a módulos enfocados en la organización personal del profesorado: 
+                \begin{itemize}
+                    \item agenda\_profesor
+                    \item clases
+                    \item asistencia\_alumnos
+                    \item calendario
+                    \item registro\_notas
+                \end{itemize}
+
+            \underline{Para ello se utilizan los siguientes comandos:}
+                \begin{itemize}
+                    \item \textbf{odoo scaffold agenda\_profesor ./custom-addons}
+                    \item \textbf{odoo scaffold clases ./custom-addons}
+                    \item \textbf{odoo scaffold asistencia\_alumnos ./custom-addons}
+                    \item \textbf{odoo scaffold calendario ./custom-addons}
+                    \item \textbf{odoo scaffold registro\_notas ./custom-addons}
+                \end{itemize}
+
 
     \newpage
     \section{Módulo funcional: "Lista de tareas"}
