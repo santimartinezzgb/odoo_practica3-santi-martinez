@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="view_lista_tareas_tree">
+      <field name="name">lista.tareas.tree</field>
+      <field name="model">lista.tareas</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre"/>
+          <field name="descripcion"/>
+          <field name="valor"/>
+          <field name="valor2"/>
+          <field name="completada"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_lista_tareas_form">
+      <field name="name">lista.tareas.form</field>
+      <field name="model">lista.tareas</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="nombre"/>
+              <field name="descripcion"/>
+              <field name="valor"/>
+              <field name="valor2"/>
+              <field name="completada"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_lista_tareas">
+      <field name="name">Lista de Tareas</field>
+      <field name="res_model">lista.tareas</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Lista de Tareas" id="menu_lista_tareas_root"/>
+    
+    <menuitem name="Tareas" 
+              id="menu_lista_tareas" 
+              parent="menu_lista_tareas_root"
+              action="action_lista_tareas"/>
+  </data>
+</odoo>
