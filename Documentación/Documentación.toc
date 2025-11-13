@@ -1,13 +1,18 @@
 \contentsline {section}{\numberline {1}Introducción}{3}{section.1}%
-\contentsline {section}{\numberline {2}Preparación del entorno}{4}{section.2}%
-\contentsline {section}{\numberline {3}Activar del modo desarrollador en Odoo}{5}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Entrar en Odoo con el usuario administrador}{5}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Activar modo desarrollador}{5}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Primer módulo: "Hola mundo"}{6}{section.4}%
-\contentsline {section}{\numberline {5}Creación de módulos en Odoo}{8}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Creación de módulos con Odoo Scaffold}{9}{subsection.5.1}%
-\contentsline {section}{\numberline {6}Módulo funcional: "Lista de tareas"}{12}{section.6}%
-\contentsline {section}{\numberline {7}Modificación del módulo "Lista de tareas"}{13}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Modelo de Datos}{13}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Explicación de Campos}{13}{subsection.7.2}%
-\contentsline {section}{\numberline {8}Conclusiones}{14}{section.8}%
+\contentsline {section}{\numberline {2}Activar del modo desarrollador en Odoo}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Entrar en Odoo con el usuario administrador}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Activar modo desarrollador}{6}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Primer módulo: "Hola mundo"}{7}{section.3}%
+\contentsline {section}{\numberline {4}Creación de módulos en Odoo}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Creación de módulos con Odoo Scaffold}{9}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Módulo funcional: "Lista de tareas"}{12}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Creación del módulo}{12}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Modelo de Datos}{13}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Explicación de Campos}{13}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Modificación del módulo "Lista de tareas"}{14}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Actualización del módulo}{14}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Explicación de la actualización}{15}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Aplicar cambios}{15}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Diferencias entre el original y la actualización}{15}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Conclusión}{16}{section.7}%
+\contentsline {section}{\numberline {8}Bibliografía}{17}{section.8}%

@@ -7,6 +7,7 @@
 \usepackage{media9}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{tcolorbox}
 
 \lstset{
     basicstyle=\ttfamily,
@@ -31,28 +32,38 @@
     % ========================== INTRODUCCIÓN ==========================
     \newpage
     \section{Introducción}
+        Esta documentaicón desarrolla la \textbf{Práctica 3: Primeros módulos en Odoo}, cuyo objetivo principal es comprender el proceso de creación, instalación y personalización de módulos dentro del entorno de desarrollo Odoo.
+        
+        Esta práctica tendrá lugar en un nuevo servidor de Odoo creado con docker compose, el cual de desglosará más adelante para poder ver bien cada una de sus partes y la creación de las mismas.
 
-    % ========================== PREPARACIÓN DEL ENTORNO ==========================
-    \newpage
-    \section{Preparación del entorno}
+        El propósito fundamental es adquirir las habilidades necesarias para configurar y actualizar módulos en Odoo, partiendo de ejemplos básicos como “Hola Mundo” y “Lista de tareas”.
+
+        Esta práctica tiene que estar vinculada a un repositorio de GitHub, a través del cual se podrán observar los avances.
 
     % ========================== ACTIVAR EL MODO DESARROLLADOR ==========================
     \newpage
     \section{Activar del modo desarrollador en Odoo}
-        Antes de proceder a su activación, cabe saber que el modo desarrollador permite ver y modificar la estructura interna de Odoo; permisos indispensables para crear o depurar módulos.
-        El modo desarrollador en Odoo se puede activar de tres maneras diferentes:
+    
+        \textbf{\underline{Modo desarrollador}}: desbloquea acceso a herramientas y ajustes avanzados en Odoo. \\\\Antes de proceder a su activación, cabe saber que el modo desarrollador permite ver y modificar la estructura interna de Odoo; permisos indispensables para crear o depurar módulos.\\\\El modo desarrollador en Odoo se puede activar de \underline{tres maneras diferentes}:
         \begin{enumerate}
             \item Desde la interfaz propia de Odoo.
             \begin{itemize}
                 \item Entrar en Odoo con el usuario administrador.
-                \item \textbf{Ajustes} $\rightarrow$ \textbf{Activar modo desarrollador} (El cual solo será visible si hay al menos un módulo instalado)
+                \item Abrir \textbf{Ajustes}
+                \item Bajar a la sección \textbf{Herramientas de desarrollador}
+                \item Click en  \textbf{Activar modo desarrollador} (El cual solo será visible si hay al menos un módulo instalado)
+                \item Una vez activado, la opción \texttt{Desactivar el modo desarrollador} se vuelve disponible.
             \end{itemize}
 
             \item Desde la URL:
             \begin{itemize}
-                \item Añadir al final de la URL: \texttt{?debug=1}\\
-                Por ejemplo: \texttt{http://localhost:8069/web?debug=1}
+                \item Para activar el modo de desarrollador desde cualquier parte de la base de datos agregar \textbf{?debug=1} a la URL después de /web.
+                
+                \item Para desactivarlo, use \textbf{?debug=0}.
+
+                \item Usar \textbf{?debug=assets} el modo de desarrollador con activos y \textbf{?debug=tests} para activarlo con activos de prueba.
             \end{itemize}
+
 
             \item Con una extensión en el navegador:
             \begin{itemize}
@@ -63,36 +74,72 @@
 
         En esta documentación se tratará la opción propia de la interfaz de Odoo, la número uno.
 
+        \begin{tcolorbox}
+            [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=Resumen]
+            El modo desarrollador en Odoo permite acceder y modificar herramientas avanzadas, activar ajustes internos y crear o depurar módulos mediante interfaz, URL o extensiones.
+        \end{tcolorbox}
 
+        \newpage
         \subsection{Entrar en Odoo con el usuario administrador}
+            Quiere decir iniciar sesión en Odoo usando una cuenta que tenga \textbf{privilegios completos}, por lo que el usuario puede:
+             \begin{itemize}
+                \item Ver y modificar todas las configuraciones
+                \item Instalar módulos
+                \item Gestionar permisos de otros usuarios
+             \end{itemize}
+
+            Este paso es necesario porque algunas opciones avanzadas, como el modo desarrollador, solo están disponibles para cuentas con permisos administrativos, ya que permiten cambiar la estructura interna y la configuración del sistema.
+
+            En otras palabras, es como abrir una aplicación con una cuenta “superusuario” para poder acceder a todo lo que normalmente los usuarios normales no pueden tocar.
+            
             \begin{figure}[!htb]
                 \centering
-                \includegraphics[width=0.8\textwidth]{images/administrador.png}
+                \includegraphics[width=0.5\textwidth]{images/administrador.png}
                 \caption{Odoo con usuario administrador}
             \end{figure}
+            Se puede comprobar que se está dentro de este usuario administrador con la imagen anterior, en la que arriba a la derecha de la pantalla prinicpal de Odoo aparece un cuadro verde con una A de administador.
 
+
+            \begin{tcolorbox}
+                [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=Resumen]
+                Entrar con el usuario administrador en Odoo permite acceder a todas las configuraciones, instalar módulos y activar opciones avanzadas como modo desarrollador.
+            \end{tcolorbox}
+
+
+        \newpage
         \subsection{Activar modo desarrollador}
+            Para ello:
+            \begin{enumerate}
+                \item Menú cuadrado arriba a la izquierda
+                \item \textbf{Ajustes}
+                \item Bajar hasta \textbf{Herramientas de desarrollador}
+                \item Click en \textbf{Activar modo desarrollador}
+            \end{enumerate}
             \begin{figure}[!htb]
                 \centering
-                \includegraphics[width=0.5\textwidth]{images/ajustes.png}
+                \includegraphics[width=0.3\textwidth]{images/ajustes.png}
                 \caption{Ajustes}
             \end{figure}
-            Clicar en \textbf{Activar modo de desarrollador}
             \begin{figure}[!htb]
                 \centering
-                \includegraphics[width=1\textwidth]{images/modo-desarrollador.png}
+                \includegraphics[width=0.6\textwidth]{images/modo-desarrollador.png}
                 \caption{Activar modo desarrollador}
             \end{figure}
 
     % ========================== PRIMER MÓDULO: "HOLA MUNDO" ==========================
     \newpage
     \section{Primer módulo: "Hola mundo"}
-        El objetivo de este primer módulo es el comprobar que Odoo detacta correctamente los módulos que se crean de forma manual.
-        La ubicación de los módulos personalizados se guarda dentro del directorio configurado para módulos, en este caso dentro de /módulos:
+        El objetivo de este primer módulo es el comprobar que Odoo detacta correctamente los módulos que se crean de forma manual.\\\\La ubicación de los módulos personalizados se guarda dentro del directorio configurado para módulos, en este caso dentro de \textbf{/custom-addons}, el cual se genera automáticamente:
         \begin{figure}[!htb]
             \centering
-            \includegraphics[width=0.6\textwidth]{images/hola_mundo.png}
-            \caption{Ubicación del módulo holamundo}
+            \includegraphics[width=0.6\textwidth]{images/custom-addons.png}
+            \caption{Directorio /custom-addons}
+        \end{figure}
+
+        \begin{figure}[!htb]
+            \centering
+            \includegraphics[width=0.4\textwidth]{images/hola-mundo.png}
+            \caption{Nuevo módulo Hola mundo}
         \end{figure}
 
         En el interior de esta carpeta, se crean dos ficheros:
@@ -104,34 +151,23 @@
                     \includegraphics[width=0.65\textwidth]{images/code_manifest.png}
                 \end{figure}
         \end{itemize}
-
-        El directorio \textbf{/módulos} queda así:
-        \begin{figure}[!htb]
-            \centering
-            \includegraphics[width=0.65\textwidth]{images/init_manifest copy.png}
-            \caption{ficheros}
-        \end{figure}
         
-        
-        Una vez creada la estructura, con el "Modo desarrollador" activado, se actualizará la liasta de aplicaciones.
+        \newpage
+        Una vez creada la estructura, con el \textbf{Modo desarrollador activado}, se actualizará la liasta de aplicaciones.
         \begin{enumerate}
             \item Entrar en el menú de Odoo e ir a la opción de \textbf{Aplicaciones}:
                 \begin{figure}[!htb]
                     \centering
-                    \includegraphics[width=0.35\textwidth]{images/entrar-aplicaciones copy.png}
+                    \includegraphics[width=0.3\textwidth]{images/entrar-aplicaciones copy.png}
                 \end{figure}
                 
             \item Ir a \textbf{Actualizar lista de aplicaciones}:
                 \begin{figure}[!htb]
                     \centering
-                    \includegraphics[width=0.8\textwidth]{images/actualizar-lista.png}
+                    \includegraphics[width=0.6\textwidth]{images/actualizar-lista.png}
                 \end{figure}
 
             \item Confirmar que \textbf{sí} se quiere actualizar:
-                \begin{figure}[!htb]
-                    \centering
-                    \includegraphics[width=0.55\textwidth]{images/confirmar-actualizar.png}
-                \end{figure}
 
             \item Muestra el módulo \textbf{"Hola mundo"}:
                 \begin{figure}[!htb]
@@ -146,13 +182,21 @@
     % ========================== CREACIÓN DE MÓDULOS EN ODOO ==========================
     \newpage
     \section{Creación de módulos en Odoo}
-        Crear un módulo en Odoo y establecer una aplicación propia integrada dentro de un ecosistema más amplio. Considerar cada módulo como una mini aplicación que forma parte de una aplicación madre mayor: Odoo. Diseñar el módulo de manera que funcione con independencia del resto, definiendo su propia lógica, modelos de datos, vistas, controladores y funcionalidades específicas. Aprovechar la estructura modular de Odoo para garantizar que cada componente opere de forma autónoma, manteniendo la coherencia del sistema general.
+    Crear un módulo en Odoo significa desarrollar una extensión o componente adicional que añade, modifica o personaliza las funciones existentes del sistema. Odoo está construido de forma modular, lo que permite que cada parte del software —como ventas, inventario, contabilidad o recursos humanos— sea un módulo independiente.
 
-        Desarrollar cada módulo como una aplicación dentro de otra aplicación, asegurando autonomía y flexibilidad en su diseño. Utilizar esta organización modular para ampliar Odoo de manera escalable y personalizada, ajustando las funciones a las necesidades particulares de cada entorno sin alterar la base del sistema. Mantener la integración fluida entre módulos para que cada uno actúe como una pieza esencial dentro de un conjunto perfectamente engranado, reforzando así la adaptabilidad y el rendimiento global de la plataforma.
+    El proceso de creación de un módulo comienza definiendo su estructura básica y un archivo principal llamado manifest.py, que describe sus características, dependencias y los elementos que lo componen.
+    
+    Gracias a este enfoque modular, Odoo es altamente personalizable, permitiendo desarrollar desde pequeñas mejoras hasta aplicaciones empresariales completas sin afectar el funcionamiento general del sistema.
         \subsection{Creación de módulos con Odoo Scaffold}
 
-        Utilizar el comando \texttt{odoo scaffold} para generar la estructura base de un nuevo módulo dentro del entorno de desarrollo de Odoo. Este comando permite crear automáticamente todos los archivos y carpetas necesarias para iniciar un módulo funcional, siguiendo la arquitectura estándar de Odoo.
-        Para ello, introducir el comando: \[\texttt{odoo scaffold "nombre del modulo" "ruta"}\]
+        \begin{tcolorbox}
+            [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=Scaffold]
+            Utilizar el comando odoo scaffold se utiliza para generar la estructura base de un nuevo módulo dentro del entorno de desarrollo de Odoo.
+        \end{tcolorbox}
+
+        
+        Este comando permite crear automáticamente todos los archivos y carpetas necesarias para iniciar un módulo funcional, siguiendo la arquitectura estándar de Odoo.
+        Para ello, introducir el comando: \[\textbf{odoo scaffold "nombre del modulo" "ruta"}\]
 
         Antes de ese paso, hay que instalar Odoo 16 por terminal, en este caso con el comando:
         \[\textbf{sudo apt install odoo-16}\]
@@ -184,7 +228,7 @@
         \begin{figure}[!htb]
             \centering
             \includegraphics[width=1\textwidth]{images/instalaciones-modulos.png}
-            \caption{Contenido de cada módulo}
+            \caption{Módulos en Odoo}
         \end{figure}
 
 
@@ -209,52 +253,85 @@
     % ========================== CREACIÓN DE LISTA DE TAREAS ==========================
     \newpage
     \section{Módulo funcional: "Lista de tareas"}
-        \begin{figure}[!htb]
-            \centering
-            \includegraphics[width=1\textwidth]{images/crear-lista-tareas.png}
-            \caption{Creación de Lista de tareas}
-        \end{figure}
+        Este módulo permite \textbf{crear y gestionar tareas} en Odoo de forma sencilla, ofreciendo una herramienta práctica para organizar y dar seguimiento a las actividades dentro de una empresa o equipo de trabajo. A través de una interfaz clara y fácil de usar, los usuarios pueden registrar nuevas tareas, asignarles información relevante y controlar su progreso desde un mismo lugar.
+        
+        El sistema permite \underline{mantener un registro estructurado de todas las tareas creadas}, facilitando la planificación y la priorización del trabajo diario, además de mejorar la comunicación entre los miembros del equipo.
 
-        \begin{figure}[!htb]
-            \centering
-            \includegraphics[width=1\textwidth]{images/cambiar-nombre-lista.png}
-            \caption{Cambiar el nombre a \textbf{Lista de tareas} sin \_ }
-        \end{figure}
+        Cada tarea cuenta con un conjunto de campos definidos que aportan información útil para su gestión. Entre ellos se incluye un \textbf{título} que identifica la tarea, una \textbf{descripción} que detalla las acciones a realizar, un \textbf{valor numérico} que puede representar prioridad, costo o esfuerzo, y un \textbf{cálculo automático} que se actualiza según ciertas condiciones o fórmulas establecidas.
+        
+        Además, cada tarea posee un \textbf{estado de completada} que permite marcar fácilmente si la tarea ha sido finalizada o sigue pendiente. Gracias a estas características, este módulo contribuye a optimizar la productividad, ofrecer un mayor control sobre el avance de las actividades y garantizar un mejor cumplimiento de los objetivos establecidos.
 
-        \begin{figure}[!htb]
-            \centering
-            \includegraphics[width=1\textwidth]{images/actualizar-modulo.png}
-            \caption{Módulo en Odoo}
-        \end{figure}
+        \begin{tcolorbox}
+            [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=Resumen]
+            Este módulo permite crear, gestionar y controlar tareas en Odoo con campos de título, descripción, valor numérico, cálculo automático y estado, mejorando la organización, seguimiento y productividad del trabajo.
+        \end{tcolorbox}
+
+        \subsection{Creación del módulo}
+            Para este caso, la creación del módulo se realiza con el propio scaffold, visto anteriormente, para falicitar y automatizar la creación de subdirectorios.
+            \begin{figure}[!htb]
+                \centering
+                \includegraphics[width=1\textwidth]{images/crear-lista-tareas.png}
+                \caption{Creación de Lista de tareas}
+            \end{figure}
+
+        
+        \newpage
+        \subsection{Modelo de Datos}
+            El archivo \_models\_.py  funciona como una \textbf{tabla para almacenar tareas} con información básica. Cada tarea tiene un \textbf{título}, una \textbf{descripción}, un \textbf{valor numérico} y un \textbf{valor en porcentaje} que se calcula automáticamente. 
+            
+            También tiene un campo \textbf{completada} que indica si la tarea ya terminó.
+
+            La función \texttt{\_calcular\_valor} se encarga de \underline{transformar el valor numérico en porcentaje}.
+            
+            \texttt{@api.depends('valor')} le dice a Odoo que \underline{solo recalule el porcentaje si el valor original cambia}, evitando errores y haciendo que el sistema sea más eficiente y automático.
+
+            \begin{figure}[!htb]
+                \centering
+                \includegraphics[width=1\textwidth]{images/modelo-lista-tareas.png}
+                \caption{Módulo en Lista de tareas}
+            \end{figure}
+            \begin{tcolorbox}
+                [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=Resumen]
+                Este modelo permite al módulo Lista de tareas: crear, almacenar y hacer seguimiento de tareas con cálculos automáticos dentro de Odoo.
+            \end{tcolorbox}
 
 
 
+        \subsection{Explicación de Campos}
+            \begin{itemize}
+                \item \textbf{nombre}: Título de la tarea, obligatorio.
+                \item \textbf{descripcion}: Descripción o detalles de la tarea.
+                \item \textbf{valor}: Número que se asigna a la tarea.
+                \item \textbf{valor2}: Calculado automáticamente como value/100.
+                \item \textbf{completada}: Indica si la tarea está completada.
+            \end{itemize}
 
+
+
+    % ========================== ACTUALIZACIÓN DE LISTA DE TAREAS ==========================
     \newpage
     \section{Modificación del módulo "Lista de tareas"}
 
 
-        Este módulo permite crear y gestionar tareas en Odoo de forma sencilla.
-        Cada tarea tiene un título, descripción, un valor numérico, un cálculo automático y un estado de completada.
-
-        \subsection{Modelo de Datos}
+        \subsection{Actualización del módulo}
         \begin{figure}[!htb]
             \centering
-            \includegraphics[width=1\textwidth]{images/modelo-lista-tareas.png}
+            \includegraphics[width=0.8\textwidth]{images/actualizacion-modulo.png}
             \caption{Módulo en Lista de tareas}
-        \end{figure}
+        \end{figure} 
 
-
-        \subsection{Explicación de Campos}
-
+        \subsection{Explicación de la actualización}
         \begin{itemize}
-            \item \textbf{nombre}: Título de la tarea, obligatorio.
-            \item \textbf{descripcion}: Descripción o detalles de la tarea.
-            \item \textbf{valor}: Número que se asigna a la tarea.
-            \item \textbf{valor2}: Calculado automáticamente como value/100.
-            \item \textbf{completada}: Indica si la tarea está completada.
+            \item Define orden de las tareas: \_order = 'estado, create\_date desc', por lo que se muestran primero según el estado y luego por fecha de creación.
+            \item Tiene un campo estado con varias opciones (pendiente, en\_progreso, completada, cancelada) que permite controlar el flujo de la tarea.
+            \item Incluye etiquetas con Many2many para clasificar tareas visualmente.
+            \item Calcula un color automáticamente según el estado, útil para resaltar tareas en la interfaz.
+            \item Incluye acciones (\texttt{action\_iniciar}, \texttt{action\_completar}, \texttt{action\_cancelar}, \texttt{action\_reabrir}) para cambiar el estado de manera rápida.
+            \item Es más visual y orientado a la gestión activa de tareas en Odoo.
         \end{itemize}
 
+
+        \subsection{Aplicar cambios}
         Para poder aplicar estos cambios al módulo Lista de tareas, es necesario reiniciar los contenedores y en los 3 puntos del módulo en Odoo y darle click en \textbf{Actualizar}. Esto hará que todos esos cambios en el módulo sean vigentes.
         \begin{figure}[!htb]
             \centering
@@ -262,8 +339,42 @@
             \caption{Módulo en Lista de tareas}
         \end{figure}
 
+        \subsection{Diferencias entre el original y la actualización}
+        El original es un modelo básico, solo para guardar datos de tareas y calcular un valor porcentual, sin ninguna gestión adicional ni interacción en la interfaz.
+        
+        La actualización es un módulo completo y funcional, pensado para gestionar tareas con estados, colores, etiquetas y acciones.
+
+
+
+    % ========================== CONCLUSIÓN DEL TRABAJO ==========================
     \newpage
-    \section{Conclusiones}
+    \section{Conclusión}
+        Esta práctica me ha ayudado a entender bastante el funcionamiento modular que tiene Odoo.
+
+        La propia documentación de odoo \url{https://www.odoo.com/documentation/15.0/es/index.html}, me ha parecido muy completa para todo tipo de pequeña duda que aparece a medida llevas a cabo los procesos de creación y modificación de módulos; también para la documentación de los mismos procesos, la cual viene adecuadamente explicada.
+
+        Sobre el lenguaje que manejan los módulos de Odoo, \textbf{python}, pese al escaso tiempo que llevo trabajando con él, me parece un lenguaje agradable de leer y aprender.
+
+        Lo que me sigue dando problemas (los cuales no incluí en la documentación por que son más de índole personal) es el volver a levantar el servidor con docker-compose. Sin tocar dada, el servidor me da problemas que no estaban la útlima vez que estuve trabajando con ello, lo cual en este caso no conseguí arreglar y tuve que decantarme por montar otro de nuevo para esta práctica.
+
+    % ========================== CONCLUSIÓN DEL TRABAJO ==========================
+    \newpage
+    \section{Bibliografía}
+    \begin{itemize}
+        \item \textbf{Uso del scaffold}: \url{https://stackoverflow.com/questions/24385750/odoo-scaffolding}
+
+        \item \textbf{Documentación Odoo (modo desarrollador)}: \url{https://www.odoo.com/documentation/15.0/es/applications/general/developer_mode.html}
+
+        \item \textbf{Documentación Odoo (creación de módulo nuevo)}: \url{https://www.odoo.com/documentation/15.0/es/administration/odoo_sh/getting_started/first_module.html}
+
+        \item \textbf{Documentación Odoo (actualización de un módulo)}: \url{https://www.youtube.com/watch?v=T2EQu8qlvXE}
+        
+        \item \textbf{Cuadro de colores en latex}: \url{https://ondahostil.wordpress.com/2017/05/17/lo-que-he-aprendido-cuadros-de-texto-de-colores-en-latex/}
+        
+        \item \textbf{ChatGPT (apoyo en la actualización del módulo Lista de tareas)}: \url{https://chatgpt.com/}
+    \end{itemize}
+
+
 
 
 
