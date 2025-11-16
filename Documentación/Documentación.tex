@@ -18,12 +18,36 @@
 }
 
 
-\title{\Huge \textbf{Documentación Práctica 3}}
-\author{Santi Martínez}
-\date{\today}
 
 \begin{document}
-    \maketitle
+
+    % % ========================== PORTADA ==========================
+    \begin{titlepage}
+        \centering
+
+        {\Large \textbf{Sistemas de Gestión Empresarial}\par}
+        
+        \vspace{2cm}
+
+        {\Huge \textbf{Práctica 3}\par}
+        \vspace{0.5cm}
+        {\LARGE Primeros módulos en Odoo\par}
+        
+        \vspace{2cm}
+        
+        \noindent\rule{10cm}{0.4pt}
+        
+        \vspace{2cm}
+        
+        {\Large \textbf{Autor:}\par}
+        \vspace{0.3cm}
+        {\large Santi Martínez\par}
+        
+        \vspace{10cm}
+
+        {\large \today}
+        
+    \end{titlepage}
 
     \newpage
     \renewcommand{\contentsname}{ÍNDICE}
@@ -32,7 +56,7 @@
     % ========================== INTRODUCCIÓN ==========================
     \newpage
     \section{Introducción}
-        Esta documentaicón desarrolla la \textbf{Práctica 3: Primeros módulos en Odoo}, cuyo objetivo principal es comprender el proceso de creación, instalación y personalización de módulos dentro del entorno de desarrollo Odoo.
+        Esta documentación desarrolla la \textbf{Práctica 3: Primeros módulos en Odoo}, cuyo objetivo principal es comprender el proceso de creación, instalación y personalización de módulos dentro del entorno de desarrollo Odoo.
         
         \vspace{0.5cm}
         Esta práctica tendrá lugar en un nuevo servidor de Odoo creado con docker compose, el cual de desglosará más adelante para poder ver bien cada una de sus partes y la creación de las mismas.
@@ -48,7 +72,9 @@
     \newpage
     \section{Activar del modo desarrollador en Odoo}
     
-        \textbf{\underline{Modo desarrollador}}: desbloquea acceso a herramientas y ajustes avanzados en Odoo. \\\\Antes de proceder a su activación, cabe saber que el modo desarrollador permite ver y modificar la estructura interna de Odoo; permisos indispensables para crear o depurar módulos.\\\\El modo desarrollador en Odoo se puede activar de \underline{tres maneras diferentes}:
+        \textbf{\underline{Modo desarrollador}}: desbloquea acceso a herramientas y ajustes avanzados en Odoo.Antes de proceder a su activación, cabe saber que el modo desarrollador permite ver y modificar la estructura interna de Odoo, permisos indispensables para crear o depurar módulos.
+        
+        \vspace{0.5cm}El modo desarrollador en Odoo se puede activar de \underline{tres maneras diferentes}:
         \begin{enumerate}
             \item Desde la interfaz propia de Odoo.
             \begin{itemize}
@@ -79,7 +105,7 @@
         En esta documentación se tratará la opción propia de la interfaz de Odoo, la número uno.
 
         \begin{tcolorbox}
-            [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=Resumen]
+            [colback=purple!5!white,colframe=purple!100!black,fonttitle=\bfseries,title=Resumen]
             El modo desarrollador en Odoo permite acceder y modificar herramientas avanzadas, activar ajustes internos y crear o depurar módulos mediante interfaz, URL o extensiones.
         \end{tcolorbox}
 
@@ -105,7 +131,7 @@
 
 
             \begin{tcolorbox}
-                [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=Resumen]
+                [colback=purple!5!white,colframe=purple!100!black,fonttitle=\bfseries,title=Resumen]
                 Entrar con el usuario administrador en Odoo permite acceder a todas las configuraciones, instalar módulos y activar opciones avanzadas como modo desarrollador.
             \end{tcolorbox}
 
@@ -133,7 +159,7 @@
     % ========================== PRIMER MÓDULO: "HOLA MUNDO" ==========================
     \newpage
     \section{Primer módulo: "Hola mundo"}
-        El objetivo de este primer módulo es el comprobar que Odoo detacta correctamente los módulos que se crean de forma manual.\\\\La ubicación de los módulos personalizados se guarda dentro del directorio configurado para módulos, en este caso dentro de \textbf{/custom-addons}, el cual se genera automáticamente:
+        El objetivo de este primer módulo es el comprobar que Odoo detecta correctamente los módulos que se crean de forma manual.\\\\La ubicación de los módulos personalizados se guarda dentro del directorio configurado para módulos, en este caso dentro de \textbf{/custom-addons}, el cual se genera automáticamente:
         \begin{figure}[!htb]
             \centering
             \includegraphics[width=0.6\textwidth]{images/custom-addons.png}
@@ -157,7 +183,7 @@
         \end{itemize}
         
         \newpage
-        Una vez creada la estructura, con el \textbf{Modo desarrollador activado}, se actualizará la liasta de aplicaciones.
+        Una vez creada la estructura, con el \textbf{Modo desarrollador activado}, se actualizará la lista de aplicaciones.
         \begin{enumerate}
             \item Entrar en el menú de Odoo e ir a la opción de \textbf{Aplicaciones}:
                 \begin{figure}[!htb]
@@ -188,13 +214,13 @@
     \section{Creación de módulos en Odoo}
     Crear un módulo en Odoo significa desarrollar una extensión o componente adicional que añade, modifica o personaliza las funciones existentes del sistema. Odoo está construido de forma modular, lo que permite que cada parte del software —como ventas, inventario, contabilidad o recursos humanos— sea un módulo independiente.
 
-    El proceso de creación de un módulo comienza definiendo su estructura básica y un archivo principal llamado manifest.py, que describe sus características, dependencias y los elementos que lo componen.
+    El proceso de creación de un módulo comienza definiendo su estructura básica y un archivo principal llamado \_manifest\_.py, que describe sus características, dependencias y los elementos que lo componen.
     
     Gracias a este enfoque modular, Odoo es altamente personalizable, permitiendo desarrollar desde pequeñas mejoras hasta aplicaciones empresariales completas sin afectar el funcionamiento general del sistema.
         \subsection{Creación de módulos con Odoo Scaffold}
 
         \begin{tcolorbox}
-            [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=Scaffold]
+            [colback=purple!5!white,colframe=purple!100!black,fonttitle=\bfseries,title=Scaffold]
             Utilizar el comando odoo scaffold se utiliza para generar la estructura base de un nuevo módulo dentro del entorno de desarrollo de Odoo.
         \end{tcolorbox}
 
@@ -266,12 +292,12 @@
         Además, cada tarea posee un \textbf{estado de completada} que permite marcar fácilmente si la tarea ha sido finalizada o sigue pendiente. Gracias a estas características, este módulo contribuye a optimizar la productividad, ofrecer un mayor control sobre el avance de las actividades y garantizar un mejor cumplimiento de los objetivos establecidos.
 
         \begin{tcolorbox}
-            [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=Resumen]
+            [colback=purple!5!white,colframe=purple!100!black,fonttitle=\bfseries,title=Resumen]
             Este módulo permite crear, gestionar y controlar tareas en Odoo con campos de título, descripción, valor numérico, cálculo automático y estado, mejorando la organización, seguimiento y productividad del trabajo.
         \end{tcolorbox}
 
         \subsection{Creación del módulo}
-            Para este caso, la creación del módulo se realiza con el propio scaffold, visto anteriormente, para falicitar y automatizar la creación de subdirectorios.
+            Para este caso, la creación del módulo se realiza con el propio scaffold, visto anteriormente, para facilitar y automatizar la creación de subdirectorios.
             \begin{figure}[!htb]
                 \centering
                 \includegraphics[width=1\textwidth]{images/crear-lista-tareas.png}
@@ -350,9 +376,9 @@
             
                 \item \textbf{action\_iniciar:} Actualiza el estado de la tarea a 'en\_progreso'. Este método se pone cuando el usuario quiere decir que está realizando la tarea, pero sin haberla terminado.
 
-                \item \textbf{action\_completar:} Cambia el estado de ka tarea a 'completada' y el campo \textbf{completada} lo pasa a true.
+                \item \textbf{action\_completar:} Cambia el estado de la tarea a 'completada' y el campo \textbf{completada} lo pasa a true.
 
-                \item \textbf{action\_cancelar:} Modifica el estado a 'cancelada'. Este método permite al usuaroi eliminar/cancelar tareas.
+                \item \textbf{action\_cancelar:} Modifica el estado a 'cancelada'. Este método permite al usuario eliminar/cancelar tareas.
 
                 \item \textbf{action\_reabrir:} Restablece una tarea al estado 'pendiente' y pone el campo \textbf{completada} en false.
 
@@ -367,7 +393,7 @@
         \subsection{Explicación concreta de la actualización}
 
             \begin{tcolorbox}
-                [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries]
+                [colback=purple!5!white,colframe=purple!100!black,fonttitle=\bfseries]
                 El módulo permite \textbf{crear, actualizar y gestionar tareas}, con campos como \underline{nombre, descripción, valores numéricos, estado y color}. Incluye métodos para valores y colores, métodos de acción para cambiar estados y opción de etiquetado para clasificar tareas, facilitando su seguimiento y búsqueda.
             \end{tcolorbox}
 
