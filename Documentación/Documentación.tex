@@ -361,13 +361,6 @@
                 \item \textbf{Color:} Según el color en el que se muestre, pretende representar un estado diferente la tarea.
             \end{itemize}
 
-
-            \subsubsection{Métodos Calculados}
-
-            El método \textbf{\_calcular\_valor} calcula el campo \texttt{valor2} dividiendo el valor original entre 100; esto va a evitar errores si el valor es cero o está vacío.
-
-            El método \textbf{\_compute\_color} asigna colores automáticamente según el estado de cada registro. Usa un diccionario (un módulo de python por decirlo así) que relaciona cada estado con un número de color, y da 0 si el estado no se reconoce.
-
             \subsubsection{Métodos de Acción}
 
             Son métodos que actualizan el estado de la tarea:
@@ -385,11 +378,7 @@
             \end{itemize}
 
 
-            \subsubsection{Modelo Auxiliar: etiquetado\_de\_tareas}
-
-            El modelo \textbf{etiquetado\_de\_tareas} le da al módulo un sistema de distinción de las tareas mediante etiquetas. Define la tabla \texttt{lista\_tareas.etiqueta} con dos campos: un nombre de tarea y un campo de color. Este método pretence que sea más fácil la búsqueda de información.
-
-
+        \newpage
         \subsection{Explicación concreta de la actualización}
 
             \begin{tcolorbox}

@@ -2,12 +2,13 @@
 <odoo>
   <data>
 
-    <!-- Vista árbol -->
+    <!-- Vista en lista de las tareas -->
     <record id="view_lista_tareas_tree" model="ir.ui.view">
-      <field name="name">lista.tareas.tree</field>
+      <field name="name">lista_tareas_tree</field>
       <field name="model">lista.tareas</field>
       <field name="arch" type="xml">
         <tree>
+          <!-- Campos que se ven como una lista -->
           <field name="nombre"/>
           <field name="estado"/>
           <field name="completada"/>
@@ -15,43 +16,45 @@
       </field>
     </record>
 
-    <!-- Vista formulario -->
+    <!-- Formulario para ver/crear una tarea -->
     <record id="view_lista_tareas_form" model="ir.ui.view">
-      <field name="name">lista.tareas.form</field>
+      <field name="name">lista_tareas_form</field>
       <field name="model">lista.tareas</field>
       <field name="arch" type="xml">
         <form>
+
           <sheet>
             <group>
+              <!-- Datos de la tarea-->
               <field name="nombre"/>
               <field name="descripcion"/>
               <field name="estado"/>
               <field name="completada"/>
             </group>
           </sheet>
+
+          <!-- Botones para cambiar el estado -->
           <footer>
-            <button name="action_iniciar" type="object" string="Iniciar" class="btn-primary"/>
-            <button name="action_completar" type="object" string="Completar" class="btn-success"/>
-            <button name="action_cancelar" type="object" string="Cancelar" class="btn-danger"/>
+            <button name="action_iniciar" type="object" string="Iniciar"/>
+            <button name="action_completar" type="object" string="Completar"/>
+            <button name="action_cancelar" type="object" string="Cancelar"/>
             <button name="action_reabrir" type="object" string="Reabrir"/>
           </footer>
+
         </form>
       </field>
     </record>
 
-    <!-- Acción -->
+    <!-- Acción para abrir la vista -->
     <record id="action_lista_tareas" model="ir.actions.act_window">
       <field name="name">Lista de Tareas</field>
       <field name="res_model">lista.tareas</field>
       <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- Menú principal -->
+    <!-- Menús -->
     <menuitem id="menu_lista_tareas_root" name="Lista de Tareas"/>
+    <menuitem id="menu_lista_tareas" name="Tareas" parent="menu_lista_tareas_root" action="action_lista_tareas"/>
 
-    <!-- Submenú que abre acción -->
-    <menuitem id="menu_lista_tareas" name="Tareas"
-              parent="menu_lista_tareas_root"
-              action="action_lista_tareas"/>
   </data>
 </odoo>
