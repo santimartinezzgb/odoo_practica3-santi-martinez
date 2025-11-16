@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.10.29)  16 NOV 2025 17:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.10.29)  16 NOV 2025 18:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -500,155 +500,172 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.57     \newpage
+l.53     \newpage
                   [1]
-Overfull \hbox (25.4616pt too wide) in paragraph at lines 68--69
+<images/logo.png, id=146, 623.32875pt x 196.735pt>
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 63.
+(pdftex.def)             Requested size: 175.17244pt x 55.28654pt.
+
+Overfull \hbox (25.4616pt too wide) in paragraph at lines 70--71
 []\OT1/cmr/m/n/12 Esta pr^^Sactica est^^Sa vin-cu-lada a un repos-i-to-rio de GitHub ([]$\OT1/cmtt/m/n/12 https : / / github . com / santimartinezzgb /
  []
 
-[2]
-Overfull \hbox (129.37354pt too wide) in paragraph at lines 101--102
+<images/github.png, id=148, 1477.52pt x 831.105pt>
+File: images/github.png Graphic file (type png)
+<use images/github.png>
+Package pdftex.def Info: images/github.png  used on input line 74.
+(pdftex.def)             Requested size: 200.19054pt x 112.60014pt.
+[2 <./images/logo.png> <./images/github.png>]
+Overfull \hbox (129.37354pt too wide) in paragraph at lines 108--109
 []\OT1/cmr/m/n/12 Chrome []$\OT1/cmtt/m/n/12 https : / / chrome . google . com / webstore / detail / odoo-[]debug / hmdmhilocobgohohpdpolmibjklfgkbi ?
  []
 
 [3]
-<images/administrador.png, id=167, 279.0425pt x 102.3825pt>
+<images/administrador.png, id=171, 279.0425pt x 102.3825pt>
 File: images/administrador.png Graphic file (type png)
 <use images/administrador.png>
-Package pdftex.def Info: images/administrador.png  used on input line 127.
+Package pdftex.def Info: images/administrador.png  used on input line 134.
 (pdftex.def)             Requested size: 250.24199pt x 91.81845pt.
  [4 <./images/administrador.png>]
-<images/ajustes.png, id=176, 217.81375pt x 232.87pt>
+<images/ajustes.png, id=180, 217.81375pt x 232.87pt>
 File: images/ajustes.png Graphic file (type png)
 <use images/ajustes.png>
-Package pdftex.def Info: images/ajustes.png  used on input line 150.
+Package pdftex.def Info: images/ajustes.png  used on input line 156.
 (pdftex.def)             Requested size: 150.14671pt x 160.52411pt.
-<images/modo-desarrollador.png, id=177, 596.2275pt x 291.0875pt>
+<images/modo-desarrollador.png, id=181, 596.2275pt x 291.0875pt>
 File: images/modo-desarrollador.png Graphic file (type png)
 <use images/modo-desarrollador.png>
-Package pdftex.def Info: images/modo-desarrollador.png  used on input line 155.
+Package pdftex.def Info: images/modo-desarrollador.png  used on input line 164.
 (pdftex.def)             Requested size: 300.29344pt x 146.60938pt.
  [5 <./images/ajustes.png> <./images/modo-desarrollador.png>]
-<images/custom-addons.png, id=191, 330.23375pt x 182.6825pt>
+<images/custom-addons.png, id=194, 330.23375pt x 182.6825pt>
 File: images/custom-addons.png Graphic file (type png)
 <use images/custom-addons.png>
-Package pdftex.def Info: images/custom-addons.png  used on input line 165.
+Package pdftex.def Info: images/custom-addons.png  used on input line 174.
 (pdftex.def)             Requested size: 300.29344pt x 166.12424pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--168
+Underfull \hbox (badness 10000) in paragraph at lines 171--177
 
  []
 
-<images/hola-mundo.png, id=192, 234.8775pt x 72.27pt>
+<images/hola-mundo.png, id=195, 234.8775pt x 72.27pt>
 File: images/hola-mundo.png Graphic file (type png)
 <use images/hola-mundo.png>
-Package pdftex.def Info: images/hola-mundo.png  used on input line 171.
+Package pdftex.def Info: images/hola-mundo.png  used on input line 180.
 (pdftex.def)             Requested size: 200.19054pt x 61.59738pt.
-<images/code_manifest.png, id=193, 356.33125pt x 104.39pt>
+<images/code_manifest.png, id=196, 356.33125pt x 104.39pt>
 File: images/code_manifest.png Graphic file (type png)
 <use images/code_manifest.png>
-Package pdftex.def Info: images/code_manifest.png  used on input line 181.
-(pdftex.def)             Requested size: 325.31154pt x 95.30722pt.
+Package pdftex.def Info: images/code_manifest.png  used on input line 189.
+(pdftex.def)             Requested size: 250.24199pt x 73.30981pt.
 [6 <./images/custom-addons.png> <./images/hola-mundo.png> <./images/code_manifest.png>]
-<images/entrar-aplicaciones copy.png, id=205, 208.78pt x 257.96375pt>
+<images/entrar-aplicaciones copy.png, id=207, 208.78pt x 257.96375pt>
 File: images/entrar-aplicaciones copy.png Graphic file (type png)
 <use images/entrar-aplicaciones copy.png>
-Package pdftex.def Info: images/entrar-aplicaciones copy.png  used on input line 191.
+Package pdftex.def Info: images/entrar-aplicaciones copy.png  used on input line 203.
 (pdftex.def)             Requested size: 150.14671pt x 185.52905pt.
-<images/actualizar-lista.png, id=206, 465.74pt x 105.39375pt>
+<images/actualizar-lista.png, id=208, 465.74pt x 105.39375pt>
 File: images/actualizar-lista.png Graphic file (type png)
 <use images/actualizar-lista.png>
-Package pdftex.def Info: images/actualizar-lista.png  used on input line 197.
+Package pdftex.def Info: images/actualizar-lista.png  used on input line 209.
 (pdftex.def)             Requested size: 300.29344pt x 67.95673pt.
-<images/modulo-ejemplo.png, id=207, 897.3525pt x 251.94125pt>
+<images/modulo-ejemplo.png, id=209, 897.3525pt x 251.94125pt>
 File: images/modulo-ejemplo.png Graphic file (type png)
 <use images/modulo-ejemplo.png>
-Package pdftex.def Info: images/modulo-ejemplo.png  used on input line 205.
-(pdftex.def)             Requested size: 500.484pt x 140.51717pt.
+Package pdftex.def Info: images/modulo-ejemplo.png  used on input line 217.
+(pdftex.def)             Requested size: 400.38872pt x 112.41142pt.
  [7 <./images/entrar-aplicaciones copy.png> <./images/actualizar-lista.png> <./images/modulo-ejemplo.png>]
-<images/instalacion_odoo-16.png, id=221, 587.19376pt x 53.19875pt>
+<images/instalacion_odoo-16.png, id=223, 587.19376pt x 53.19875pt>
 File: images/instalacion_odoo-16.png Graphic file (type png)
 <use images/instalacion_odoo-16.png>
-Package pdftex.def Info: images/instalacion_odoo-16.png  used on input line 236.
+Package pdftex.def Info: images/instalacion_odoo-16.png  used on input line 250.
 (pdftex.def)             Requested size: 500.484pt x 45.34334pt.
  [8 <./images/instalacion_odoo-16.png>]
-<images/crear-modulos.png, id=229, 692.5875pt x 120.45pt>
+<images/crear-modulos.png, id=231, 692.5875pt x 120.45pt>
 File: images/crear-modulos.png Graphic file (type png)
 <use images/crear-modulos.png>
-Package pdftex.def Info: images/crear-modulos.png  used on input line 255.
+Package pdftex.def Info: images/crear-modulos.png  used on input line 269.
 (pdftex.def)             Requested size: 500.484pt x 87.04187pt.
-<images/instalaciones-modulos.png, id=230, 1580.90625pt x 1373.13pt>
+<images/instalaciones-modulos.png, id=232, 1580.90625pt x 1373.13pt>
 File: images/instalaciones-modulos.png Graphic file (type png)
 <use images/instalaciones-modulos.png>
-Package pdftex.def Info: images/instalaciones-modulos.png  used on input line 260.
+Package pdftex.def Info: images/instalaciones-modulos.png  used on input line 274.
 (pdftex.def)             Requested size: 500.484pt x 434.69632pt.
  [9 <./images/crear-modulos.png> <./images/instalaciones-modulos.png>]
-<images/agenda_profesor.png, id=240, 460.72125pt x 446.66875pt>
+<images/agenda_profesor.png, id=242, 460.72125pt x 446.66875pt>
 File: images/agenda_profesor.png Graphic file (type png)
 <use images/agenda_profesor.png>
-Package pdftex.def Info: images/agenda_profesor.png  used on input line 268.
+Package pdftex.def Info: images/agenda_profesor.png  used on input line 282.
 (pdftex.def)             Requested size: 450.43253pt x 436.68959pt.
  [10 <./images/agenda_profesor.png>]
-<images/crear-lista-tareas.png, id=248, 694.595pt x 55.20625pt>
+<images/crear-lista-tareas.png, id=250, 694.595pt x 55.20625pt>
 File: images/crear-lista-tareas.png Graphic file (type png)
 <use images/crear-lista-tareas.png>
-Package pdftex.def Info: images/crear-lista-tareas.png  used on input line 303.
+Package pdftex.def Info: images/crear-lista-tareas.png  used on input line 325.
 (pdftex.def)             Requested size: 500.484pt x 39.77962pt.
  [11 <./images/crear-lista-tareas.png>]
-Overfull \hbox (14.7829pt too wide) in paragraph at lines 316--317
-[]\OT1/cmtt/m/n/12 @api.depends('valor') \OT1/cmr/m/n/12 le dice a Odoo que $[]$,
- []
-
-<images/modelo-lista-tareas.png, id=256, 809.0225pt x 422.57875pt>
+<images/modelo-lista-tareas.png, id=258, 809.0225pt x 422.57875pt>
 File: images/modelo-lista-tareas.png Graphic file (type png)
 <use images/modelo-lista-tareas.png>
-Package pdftex.def Info: images/modelo-lista-tareas.png  used on input line 320.
+Package pdftex.def Info: images/modelo-lista-tareas.png  used on input line 341.
 (pdftex.def)             Requested size: 500.484pt x 261.42224pt.
-[12 <./images/modelo-lista-tareas.png>] [13]
-Underfull \hbox (badness 2790) in paragraph at lines 386--387
+ [12 <./images/modelo-lista-tareas.png>] [13]
+Underfull \hbox (badness 2790) in paragraph at lines 405--406
 []\OT1/cmr/m/n/12 El m^^Sodulo per-mite \OT1/cmr/bx/n/12 crear, ac-tu-alizar y ges-tionar tar-eas\OT1/cmr/m/n/12 , con cam-pos como
  []
 
-<images/actualizar-modulo.png, id=270, 543.02875pt x 205.76875pt>
+<images/actualizar-modulo.png, id=272, 543.02875pt x 205.76875pt>
 File: images/actualizar-modulo.png Graphic file (type png)
 <use images/actualizar-modulo.png>
-Package pdftex.def Info: images/actualizar-modulo.png  used on input line 396.
+Package pdftex.def Info: images/actualizar-modulo.png  used on input line 415.
 (pdftex.def)             Requested size: 500.484pt x 189.6549pt.
 [14 <./images/actualizar-modulo.png>]
-<images/ejemplo-tarea.png, id=278, 768.8725pt x 356.33125pt>
+<images/ejemplo-tarea.png, id=280, 768.8725pt x 356.33125pt>
 File: images/ejemplo-tarea.png Graphic file (type png)
 <use images/ejemplo-tarea.png>
-Package pdftex.def Info: images/ejemplo-tarea.png  used on input line 428.
+Package pdftex.def Info: images/ejemplo-tarea.png  used on input line 453.
 (pdftex.def)             Requested size: 500.484pt x 231.9551pt.
  [15 <./images/ejemplo-tarea.png>]
-<images/tarea-completada.png, id=286, 768.8725pt x 356.33125pt>
+<images/tarea-completada.png, id=288, 768.8725pt x 356.33125pt>
 File: images/tarea-completada.png Graphic file (type png)
 <use images/tarea-completada.png>
-Package pdftex.def Info: images/tarea-completada.png  used on input line 437.
+Package pdftex.def Info: images/tarea-completada.png  used on input line 467.
 (pdftex.def)             Requested size: 500.484pt x 231.9551pt.
  [16 <./images/tarea-completada.png>] [17] [18]
-Overfull \hbox (3.5214pt too wide) in paragraph at lines 492--493
+Overfull \hbox (3.5214pt too wide) in paragraph at lines 534--535
 []\OT1/cmr/bx/n/12 Uso del scaf-fold\OT1/cmr/m/n/12 : []$\OT1/cmtt/m/n/12 https : / / stackoverflow . com / questions / 24385750 / odoo-[]scaffolding$[] 
  []
 
 
-Overfull \hbox (4.9588pt too wide) in paragraph at lines 494--495
+Overfull \hbox (4.9588pt too wide) in paragraph at lines 538--539
 []\OT1/cmr/bx/n/12 Documentaci^^Son Odoo (modo de-sar-rol-lador)\OT1/cmr/m/n/12 : []$\OT1/cmtt/m/n/12 https : / / www . odoo . com / documentation /
  []
 
 
-Overfull \hbox (40.86292pt too wide) in paragraph at lines 496--497
+Overfull \hbox (71.80608pt too wide) in paragraph at lines 540--541
+[]\OT1/cmr/bx/n/12 Crear una por-tada bonita en La-tex\OT1/cmr/m/n/12 : []$\OT1/cmtt/m/n/12 https : / / manualdelatex . com / tutoriales / crear-[]una-[]portada$[] 
+ []
+
+
+Overfull \hbox (40.86292pt too wide) in paragraph at lines 542--543
 []\OT1/cmr/bx/n/12 Documentaci^^Son Odoo (creaci^^Son de m^^Sodulo nuevo)\OT1/cmr/m/n/12 : []$\OT1/cmtt/m/n/12 https : / / www . odoo . com / documentation /
  []
 
 
-Overfull \hbox (317.39093pt too wide) in paragraph at lines 500--501
-[]\OT1/cmr/bx/n/12 Cuadro de col-ores en la-tex\OT1/cmr/m/n/12 : []$\OT1/cmtt/m/n/12 https : / / ondahostil . wordpress . com / 2017 / 05 / 17 / lo-[]que-[]he-[]aprendido-[]cuadros-[]de-[]texto-[]de-[]colores-[]en-[]latex/$[] 
+Overfull \hbox (9.23529pt too wide) in paragraph at lines 546--547
+[]\OT1/cmr/bx/n/12 Para xml\OT1/cmr/m/n/12 : []$\OT1/cmtt/m/n/12 https : / / www . odoo . com / documentation / 15 . 0 / developer / reference / backend /
  []
 
 
-Overfull \hbox (4.4711pt too wide) in paragraph at lines 502--503
-[]\OT1/cmr/bx/n/12 ChatGPT (apoyo en la ac-tu-al-izaci^^Son del m^^Sodulo Lista de tar-eas)\OT1/cmr/m/n/12 : []$\OT1/cmtt/m/n/12 https : / / chatgpt .
+Overfull \hbox (48.74355pt too wide) in paragraph at lines 548--549
+[]\OT1/cmr/bx/n/12 Herencia de mod-e-los en Odoo\OT1/cmr/m/n/12 : []$\OT1/cmtt/m/n/12 https : / / www . cybrosys . com / blog / model-[]inheritance-[]in-[]odoo$[] 
+ []
+
+
+Overfull \hbox (325.87704pt too wide) in paragraph at lines 550--551
+[]\OT1/cmr/bx/n/12 Cuadro de col-ores en La-TeX\OT1/cmr/m/n/12 : []$\OT1/cmtt/m/n/12 https : / / ondahostil . wordpress . com / 2017 / 05 / 17 / lo-[]que-[]he-[]aprendido-[]cuadros-[]de-[]texto-[]de-[]colores-[]en-[]latex/$[] 
  []
 
 [19] (./Documentación.aux)
@@ -660,18 +677,18 @@ Package rerunfilecheck Info: File `Documentación.out' has not changed.
 (rerunfilecheck)             Checksum: 13555708F185A428FB016F6AEC526179;4987.
  ) 
 Here is how much of TeX's memory you used:
- 21398 strings out of 476182
- 406718 string characters out of 5795594
+ 21412 strings out of 476182
+ 407053 string characters out of 5795594
  1933975 words of memory out of 5000000
- 43035 multiletter control sequences out of 15000+600000
+ 43051 multiletter control sequences out of 15000+600000
  563734 words of font info for 55 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  83i,7n,87p,647b,473s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/santi/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Documentación.pdf (20 pages, 734912 bytes).
+Output written on Documentación.pdf (20 pages, 767239 bytes).
 PDF statistics:
- 364 PDF objects out of 1000 (max. 8388607)
- 294 compressed objects within 3 object streams
- 72 named destinations out of 1000 (max. 500000)
- 303 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 371 PDF objects out of 1000 (max. 8388607)
+ 297 compressed objects within 3 object streams
+ 70 named destinations out of 1000 (max. 500000)
+ 313 words of extra memory for PDF output out of 10000 (max. 10000000)
 
