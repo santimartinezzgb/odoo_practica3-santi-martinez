@@ -11,8 +11,17 @@
 \contentsline {subsection}{\numberline {5.3}Explicación de Campos}{13}{subsection.5.3}%
 \contentsline {section}{\numberline {6}Modificación del módulo "Lista de tareas"}{14}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Actualización del módulo}{14}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Explicación de la actualización}{15}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.1.1}Métodos Calculados}{14}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}Métodos de Acción}{14}{subsubsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.3}Modelo Auxiliar: etiquetado\_de\_tareas}{14}{subsubsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.2}Explicación concreta de la actualización}{15}{subsection.6.2}%
 \contentsline {subsection}{\numberline {6.3}Aplicar cambios}{15}{subsection.6.3}%
 \contentsline {subsection}{\numberline {6.4}Diferencias entre el original y la actualización}{15}{subsection.6.4}%
-\contentsline {section}{\numberline {7}Conclusión}{16}{section.7}%
-\contentsline {section}{\numberline {8}Bibliografía}{17}{section.8}%
+\contentsline {subsection}{\numberline {6.5}Uso práctico del módulo}{16}{subsection.6.5}%
+\contentsline {subsubsection}{\numberline {6.5.1}Creación de nueva tarea}{16}{subsubsection.6.5.1}%
+\contentsline {subsubsection}{\numberline {6.5.2}Vista de la lista de tareas pendientes}{17}{subsubsection.6.5.2}%
+\contentsline {section}{\numberline {7}Problemas surgidos}{18}{section.7}%
+\contentsline {subsection}{\numberline {7.1}yourcompany.com}{18}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Métodos en el models.py y modificar views.xml}{18}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Conclusión}{19}{section.8}%
+\contentsline {section}{\numberline {9}Bibliografía}{20}{section.9}%

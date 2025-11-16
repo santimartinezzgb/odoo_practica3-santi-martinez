@@ -18,7 +18,7 @@
 }
 
 
-\title{Documentación del módulo Hola Mundo en Odoo}
+\title{\Huge \textbf{Documentación Práctica 3}}
 \author{Santi Martínez}
 \date{\today}
 
@@ -314,48 +314,157 @@
 
 
         \subsection{Actualización del módulo}
-        \begin{figure}[!htb]
-            \centering
-            \includegraphics[width=0.8\textwidth]{images/actualizacion-modulo.png}
-            \caption{Módulo en Lista de tareas}
-        \end{figure} 
 
-        \subsection{Explicación de la actualización}
-        \begin{itemize}
-            \item Define orden de las tareas: \_order = 'estado, create\_date desc', por lo que se muestran primero según el estado y luego por fecha de creación.
-            \item Tiene un campo estado con varias opciones (pendiente, en\_progreso, completada, cancelada) que permite controlar el flujo de la tarea.
-            \item Incluye etiquetas con Many2many para clasificar tareas visualmente.
-            \item Calcula un color automáticamente según el estado, útil para resaltar tareas en la interfaz.
-            \item Incluye acciones (\texttt{action\_iniciar}, \texttt{action\_completar}, \texttt{action\_cancelar}, \texttt{action\_reabrir}) para cambiar el estado de manera rápida.
-            \item Es más visual y orientado a la gestión activa de tareas en Odoo.
-        \end{itemize}
+
+            El módulo da al usuario funcionalidades para crear, actualizar y gestionar  tareas. Este proporciona los siguientes campos para cada tarea y hacer dinámica y agradable la gestión de estas tareas:
+
+            \begin{itemize}
+
+                \item \textbf{Nombre y Descripción:} Es el título de la tarea. El campo \textbf{descripcion} otorga una explicación un poco más amplia de lo que es la tarea.
+
+                \item \textbf{Valores Numéricos:} Son números asociados a cada tarea. Este campo usa el parámetro store=True, lo que hace que el valor persista en la base de datos, es decir, un guardado permanente.
+
+                \item \textbf{Estado:} Implementa una selección con cuatro opciones posibles: pendiente, en progreso, completada y cancelada. El valor por predeterminado es 'pendiente'. Este campo determina el estado de la tarea.
+
+                \item \textbf{Indicador de Completitud:} Es un campo booleano que quiere decir al usuario si la tarea está (true) o no (false) completada.
+
+                \item \textbf{Color:} Según el color en el que se muestre, pretende representar un estado diferente la tarea.
+            \end{itemize}
+
+
+            \subsubsection{Métodos Calculados}
+
+            El método \textbf{\_calcular\_valor} calcula el campo \texttt{valor2} dividiendo el valor original entre 100; esto va a evitar errores si el valor es cero o está vacío.
+
+            El método \textbf{\_compute\_color} asigna colores automáticamente según el estado de cada registro. Usa un diccionario (un módulo de python por decirlo así) que relaciona cada estado con un número de color, y da 0 si el estado no se reconoce.
+
+            \subsubsection{Métodos de Acción}
+
+            Son métodos que actualizan el estado de la tarea:
+
+            \begin{itemize}
+            
+                \item \textbf{action\_iniciar:} Actualiza el estado de la tarea a 'en\_progreso'. Este método se pone cuando el usuario quiere decir que está realizando la tarea, pero sin haberla terminado.
+
+                \item \textbf{action\_completar:} Cambia el estado de ka tarea a 'completada' y el campo \textbf{completada} lo pasa a true.
+
+                \item \textbf{action\_cancelar:} Modifica el estado a 'cancelada'. Este método permite al usuaroi eliminar/cancelar tareas.
+
+                \item \textbf{action\_reabrir:} Restablece una tarea al estado 'pendiente' y pone el campo \textbf{completada} en false.
+
+            \end{itemize}
+
+
+            \subsubsection{Modelo Auxiliar: etiquetado\_de\_tareas}
+
+            El modelo \textbf{etiquetado\_de\_tareas} le da al módulo un sistema de distinción de las tareas mediante etiquetas. Define la tabla \texttt{lista\_tareas.etiqueta} con dos campos: un nombre de tarea y un campo de color. Este método pretence que sea más fácil la búsqueda de información.
+
+
+        \subsection{Explicación concreta de la actualización}
+
+            \begin{tcolorbox}
+                [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries]
+                El módulo permite \textbf{crear, actualizar y gestionar tareas}, con campos como \underline{nombre, descripción, valores numéricos, estado y color}. Incluye métodos para valores y colores, métodos de acción para cambiar estados y opción de etiquetado para clasificar tareas, facilitando su seguimiento y búsqueda.
+            \end{tcolorbox}
+
+
 
 
         \subsection{Aplicar cambios}
         Para poder aplicar estos cambios al módulo Lista de tareas, es necesario reiniciar los contenedores y en los 3 puntos del módulo en Odoo y darle click en \textbf{Actualizar}. Esto hará que todos esos cambios en el módulo sean vigentes.
         \begin{figure}[!htb]
             \centering
-            \includegraphics[width=0.8\textwidth]{images/actualizar-modulo.png}
+            \includegraphics[width=1\textwidth]{images/actualizar-modulo.png}
             \caption{Módulo en Lista de tareas}
         \end{figure}
 
         \subsection{Diferencias entre el original y la actualización}
         El original es un modelo básico, solo para guardar datos de tareas y calcular un valor porcentual, sin ninguna gestión adicional ni interacción en la interfaz.
         
+        \vspace{0.5cm}
         La actualización es un módulo completo y funcional, pensado para gestionar tareas con estados, colores, etiquetas y acciones.
+
+        \newpage
+        \subsection{Uso práctico del módulo}
+
+            \subsubsection{Creación de nueva tarea}
+                El módulo, como su propio nombre indica, proporciona al usuario la posibilidad de crear nuevas tareas para posteriormente tenerlas listadas.
+
+                \vspace{0.5cm}
+                Esta pantalla distingue entre los siguientes campos:
+                \begin{itemize}
+                    \item Título de la nueva tarea
+                    \item Descripción de la tarea
+                    \item Estado
+                        \begin{itemize}
+                            \item pendiente
+                            \item completada
+                            \item en progreso
+                            \item cancelada
+                        \end{itemize}
+                    \item Casilla para indicar que está completada
+                \end{itemize}
+                \begin{figure}[!htb]
+                    \centering
+                    \includegraphics[width=1\textwidth]{images/ejemplo-tarea.png}
+                    \caption{Creación de tarea}
+                \end{figure}
+
+            \newpage
+            \subsubsection{Vista de la lista de tareas pendientes}
+                Esta es una vista general de todas las tareas creadas por el usuario, en la que se puede observar las completadas y las pendientes de realizar.
+                \begin{figure}[!htb]
+                    \centering
+                    \includegraphics[width=1\textwidth]{images/tarea-completada.png}
+                    \caption{Vista con alguna tarea completada}
+                \end{figure}
+
+
+
+    % ========================== CONCLUSIÓN DEL TRABAJO ==========================
+    \newpage
+    \section{Problemas surgidos}
+        \subsection{yourcompany.com}
+            Al principio el módulo lista de tareas no hacía más que enviarme a yourcompany.com y no sabía el por qué. Revisando el código me di cuenta en el \textbf{\_\_manifest\_\_.py} que aparecía:
+
+            'views/templates.xml',
+
+
+            Ese archivo viene del módulo generado por el scaffolding de Odoo, e incluye la página de ejemplo de yourcompany.com, por eso me entraba ahí solamente.
+
+            Ese templates.xml no debería estar en un módulo que solo muestra listas y formularios.
+
+            Cuando Odoo detecta un archivo templates.xml con rutas web, puede redirigir al usuario a una página en blanco o colgada,como fue el cado de yourcompany.com. Así que comenté esa línea de código y listo.
+
+        \subsection{Métodos en el models.py y modificar views.xml}
+            El tema de métodos dentro del módulo Lista de tareas fue algo que, no sé si evitable o inevitablemente, tuve que apoyarme en víedos de youtube donde hacian algo muy muy parecido, en concreto en este vídeo \url{https://www.youtube.com/watch?v=VMfm-CvigXM} + ciertos prompts en AI para conseguir el funcionamiento.
+
+            \vspace{0.5cm}
+            Esa parte me resultó bastante tediosa de realizar; principalmente por que hasta ya avanzado el trabajo (y verlo casi construido) no visualicé correctamente el esquema mental de cómo se construyen estos módulos. Entiendo que todo eso puede ser porque es la primera vez que realizo este tipo de actividad.
+
+
 
 
 
     % ========================== CONCLUSIÓN DEL TRABAJO ==========================
     \newpage
     \section{Conclusión}
-        Esta práctica me ha ayudado a entender bastante el funcionamiento modular que tiene Odoo.
+        Esta práctica me ha ayudado a entender bastante el funcionamiento modular que tiene Odoo, pese a que tanto al principio como en proceso de la práctica no entendiese perfectamente cada funcionamiento.
 
+        \vspace{0.5cm}
         La propia documentación de odoo \url{https://www.odoo.com/documentation/15.0/es/index.html}, me ha parecido muy completa para todo tipo de pequeña duda que aparece a medida llevas a cabo los procesos de creación y modificación de módulos; también para la documentación de los mismos procesos, la cual viene adecuadamente explicada.
 
-        Sobre el lenguaje que manejan los módulos de Odoo, \textbf{python}, pese al escaso tiempo que llevo trabajando con él, me parece un lenguaje agradable de leer y aprender.
+        \vspace{0.5cm}
+        Sobre el lenguaje que manejan los módulos de Odoo, \textbf{python}, pese al escaso tiempo que llevo trabajando con él, me parece un lenguaje agradable de leer y aprender; pero ahora mismo para ciertas cosas como \textbf{@api.depepends} o la creación de ciertos tipos de variables, se me haga pesado por mero desconocimietno.
 
-        Lo que me sigue dando problemas (los cuales no incluí en la documentación por que son más de índole personal) es el volver a levantar el servidor con docker-compose. Sin tocar dada, el servidor me da problemas que no estaban la útlima vez que estuve trabajando con ello, lo cual en este caso no conseguí arreglar y tuve que decantarme por montar otro de nuevo para esta práctica.
+        \vspace{0.5cm}
+        Lo que me sigue dando problemas (los cuales no incluí en la documentación por que son más de índole personal) es el volver a levantar el servidor con docker-compose. Sin tocar dada, el servidor me da problemas que no estaban la útlima vez que estuve trabajando con ello, lo cual en este caso no conseguí arreglar y tuve que decantarme por montar otro de nuevo para esta práctica. El \underline{trabajar más con docker} para mejorar mi capacidad de análisis sobre los problemas que me aparezcan, es algo que tengo que empezar a hacer ya mismo.
+
+        \vspace{0.5cm}
+        Respecto a odoo, sigo viéndolo como algo práctico, pero me recuerda mucho a mi experiencia pasada trabajando en temas administrativos puros, es algo que no me levanto de la cama y pienso: ¡Qué maravilla que hoy toca gestionar datos en Odoo!.
+
+        \vspace{0.5cm}
+        Como conclusión final, decir que con lo que me quedo a nivel gustos es el objetivo de seguir aprendiendo bien docker y la opinión personal de que creo que estoy mejorando a la hora de documentar y presentar trabajos, lo que va de la mano a que tambíen le esté cogiendo algo de gusto.
 
     % ========================== CONCLUSIÓN DEL TRABAJO ==========================
     \newpage
